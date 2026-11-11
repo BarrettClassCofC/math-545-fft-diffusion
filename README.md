@@ -64,9 +64,9 @@ Let $\alpha=0.1$.
 
 3. Find the exact solution of the diffusion equation for this initial condition. Use it to verify your implementation by computing
 
-   $$
-   E_N(t)=\max_{0\le j<N}|p_N(x_j,t)-u(x_j,t)|.
-   $$
+$$
+E_N(t)=\max_{0\le j \lt N}|p_N(x_j,t)-u(x_j,t)|.
+$$
 
    How does this error depend on $N$, provided the initial condition is adequately resolved?
 
@@ -84,15 +84,15 @@ Unlike the function in Part 2, this function cannot be represented exactly by a 
 
 1. Compute the numerical solution at $t=0.1$ with $\alpha=0.1$ for several powers of two, such as
 
-   $$
-   N=16,\ 32,\ 64,\ 128,\ 256.
-   $$
+$$
+N=16,\ 32,\ 64,\ 128,\ 256.
+$$
 
 2. We do not have a convenient exact solution for comparison. Instead, compute a reference solution using a much finer grid, such as $N_{\mathrm{ref}}=4096$. Because each coarse grid size divides $N_{\mathrm{ref}}$, coarse point $j$ coincides with fine point $j(N_{\mathrm{ref}}/N)$ using zero-based indexing. Use those entries of the reference solution to compute
 
-   $$
-   E_N=\max_{0\le j<N}|p_N(x_j,t)-p_{\mathrm{ref}}(x_j,t)|.
-   $$
+$$
+E_N=\max_{0\le j \lt N}|p_N(x_j,t)-p_{\mathrm{ref}}(x_j,t)|.
+$$
 
    Plot $E_N$ against $N$ on a log-log scale. Describe the convergence behavior. Does it appear to follow a fixed algebraic convergence rate?
 
@@ -136,9 +136,9 @@ A numerical solution that looks reasonable is not necessarily correct. In this f
 
 1. **Conservation of the average.** For a periodic function, define its spatial average as
 
-   $$
-   \overline{u}(t)=\frac{1}{2\pi}\int_0^{2\pi}u(x,t)\,dx.
-   $$
+$$
+\overline{u}(t)=\frac{1}{2\pi}\int_0^{2\pi}u(x,t)\,dx.
+$$
 
    Determine how this quantity is related to the Fourier coefficients. Use your evolution equations to determine whether it changes with time. Verify your conclusion numerically for the initial conditions in Parts 2 and 4.
 
